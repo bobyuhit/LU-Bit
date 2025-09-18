@@ -1,6 +1,6 @@
 //% color=#EC1313 weight=91 icon="\uf19c" block="LU-Bit"
 namespace luBit {
-    //% block="TestVersion 1"
+    //% block="Init RC-Controller"
     //% weight=100
     //% group="Test"
     export function testFunction_TS(): void {
