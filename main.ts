@@ -2,22 +2,31 @@
 namespace luBit {
     //% block="Init RC-Controller"
     //% weight=100
-    //% group="Test"
-    export function testFunction_TS(): void {
-        luBit.TestFunction_C();
+    //% group="LU_Drone"
+    export function RC_Controller_Init(): void {
+        serial.redirect(
+        SerialPin.P16,
+        SerialPin.P8,
+        BaudRate.BaudRate115200
+        )
     }
 
-    //% block="initialize SPI and NRF24L01"
+
+
+    //% block="Control throttle=$throttle pitch=$pitch roll=$roll yaw=$yaw"
     //% weight=90
     //% group="LU_Drone"
-    export function initNrf24_TS(): boolean {
-        return luBit.InitNrf24_C();
+    export function sendRC_Control(throttle: number, pitch: number, roll: number, yaw: number): void {
+        serial.writeNumber(170)
     }
 
-    //% block="throttle=$throttle pitch=$pitch roll=$roll yaw=$yaw"
+
+
+    //% block="Order order=$order data=$data"
     //% weight=80
     //% group="LU_Drone"
-    export function sendRC_TS(throttle: number, pitch: number, roll: number, yaw: number): boolean {
-        return luBit.SendRC_C(throttle, pitch, roll, yaw);
+    export function sendRC_Order(order: number, data: number): void {
+        serial.writeNumber(1)
     }
+
 }
