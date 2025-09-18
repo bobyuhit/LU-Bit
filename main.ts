@@ -1,4 +1,4 @@
-//% color=#EC1313 weight=91 icon="\uf19c" block="LU-Bit"
+//% color=#13ABEC weight=91 icon="\uf19c" block="LU-Bit"
 namespace luBit {
     export enum DroneOrder {
         //% block="起飞"
@@ -12,7 +12,11 @@ namespace luBit {
         //% block="打开悬停"
         HoverOn = 5,
         //% block="关闭悬停"
-        HoverOff = 6
+        HoverOff = 6,
+        //% block="打开投弹"
+        DropBomb = 7,
+        //% block="关闭投弹"
+        DropBombOff = 8
     }
 
     //% block="Init Drone RC-Controller"
